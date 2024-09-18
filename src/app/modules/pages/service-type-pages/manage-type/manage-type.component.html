@@ -1,0 +1,58 @@
+<div class="p-2">
+  <h2>Create Service</h2>
+  <hr>
+  <div class="alert alert-danger mt-2" role="alert" *ngIf="errorMsg.length">
+    <p class="p-0 m-0" *ngFor="let msg of errorMsg">{{msg}}</p>
+  </div>
+  <div class="d-flex gap-2">
+    <div class="col-3">
+      <img class="rounded-1" width="100%" height="100%" [src]=" selectedPicture || 'https://source.unsplash.com/user/c_v_r/1900x800'" alt="">
+      <div class="mt-2">
+        <input
+          (change)="onFileSelected($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+          accept="image/*"
+        >
+      </div>
+    </div>
+    <div class="col-9">
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="name" class="form-label">Name</label>
+          <input [(ngModel)]="typeRequest.name" type="text" class="form-control" id="name" name="name"
+                 placeholder="Name">
+        </div>
+        <div class="col-12">
+          <label for="category" class="form-label">Category</label>
+          <input [(ngModel)]="typeRequest.category" type="email" class="form-control" id="category" name="category"
+                 placeholder="category">
+        </div>
+        <div class="col-md-6">
+          <label for="price" class="form-label">Price</label>
+          <input [(ngModel)]="typeRequest.price" type="text" class="form-control" id="price" name="price" placeholder="Price €">
+        </div>
+        <div class="col-md-6">
+          <label for="duration" class="form-label">Duration</label>
+          <input [(ngModel)]="typeRequest.duration" type="text" class="form-control" id="duration" name="duration" placeholder="Time">
+        </div>
+
+        <div class="col-12">
+          <label for="description" class="form-label">Description</label>
+          <textarea [(ngModel)]="typeRequest.description" rows="4" class="form-control" id="description" name="description"
+                    placeholder="Description"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 col-12">
+          <button (click)="saveType()" type="submit" class="btn btn-outline-primary">
+            <i class="fas fa-save"></i>&nbsp;Save
+          </button>
+          <a routerLink="activities" type="submit" class="btn btn-link btn text-danger">
+            <i class="fas fa-times"></i>&nbsp;Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

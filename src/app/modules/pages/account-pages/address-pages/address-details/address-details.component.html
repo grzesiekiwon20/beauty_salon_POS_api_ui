@@ -1,0 +1,35 @@
+
+<div class="img-thumbnail " style="background-color: blueviolet; max-width: 1180px; left: 25%">
+  <div class="img-thumbnail text-center">
+    <h5>Address Details</h5>
+  </div>
+  <div class="d-inline-grid border-3 p-2" style="background: #aad024" *ngFor="let a of this.addressResponseArray">
+    <div class="img-thumbnail" style="background-color: #d0cea8;box-shadow: 0 30px 20px yellow ">
+      <p class="text-center font-monospace">{{ a.addressType?.toUpperCase() }}</p>
+      <label class="p-2">Street:</label>
+      <p class="p-2">{{ a.street }}</p>
+      <p class="p-2">City:</p>
+      <p class="p-2">{{ a.city }}</p>
+      <p class="p-2">Post Code:</p>
+      <p class="p-2">{{ a.postCode }}</p>
+      <button [routerLink]="['edit-address']" class="p-1 m-3 rounded-2 btn-primary"
+              style="width: 150px; background-color: #f9f9f9 ;" type="submit">Edit
+        Address
+      </button>
+      <button [routerLink]="['remove-address']" class="p-1 m-3 rounded-2 btn-primary"
+              style="width: 150px; background-color: #f9f9f9 ;" type="submit">Remove Address
+      </button>
+    </div>
+  </div>
+</div>
+<div class="d-flex flex-row">
+  <div>
+    <button class="p-1 m-3 rounded-2 btn-primary" routerLink="add-address"
+            style="width: 150px; background-color: #f9f9f9;" type="button">Add
+      Address
+    </button>
+  </div>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

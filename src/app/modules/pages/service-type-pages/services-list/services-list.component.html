@@ -1,0 +1,19 @@
+<div class="service-list">
+  <button class="b-1"
+          (click)="allServices()"
+  >All Services</button>
+  <button class="b-1">Eyelashes</button>
+  <button class="b-1">Eyebrows</button>
+  <button class="b-1">Facial Treatment</button>
+  <button class="b-1">Permanent Makeup</button>
+  <button class="b-1">Other</button>
+</div>
+<div class="content">
+  <app-type-card
+    *ngFor="let type of typeResponse"
+    [type]="type"
+    (details)="displayBookDetails($event)"
+  ></app-type-card>
+</div>
+
+

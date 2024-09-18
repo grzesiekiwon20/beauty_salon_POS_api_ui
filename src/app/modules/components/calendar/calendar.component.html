@@ -1,0 +1,16 @@
+<div class="calendar container-fluid img-thumbnail">
+  <div class="calendar-header">
+    <button (click)="prevMonth()">&#8249;</button>
+    <h2>{{ monthNames[currentMonth] }} {{ currentYear }}</h2>
+    <button (click)="nextMonth()">&#8250;</button>
+  </div>
+  <div class="days-of-week">
+    <div *ngFor="let day of daysOfWeek">{{ day }}</div>
+  </div>
+  <div class="calendar-grid">
+    <div *ngFor="let day of daysInMonth" [class.empty]="day === 0">
+      {{ day !== 0 ? day : '' }}
+    </div>
+  </div>
+</div>
+

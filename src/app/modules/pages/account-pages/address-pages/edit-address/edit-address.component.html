@@ -1,0 +1,31 @@
+<div class="img-thumbnail d-flex flex-column">
+  <div
+    *ngIf="message"
+    class="alert "
+    [class.alert-danger]="level==='error'"
+    [class.alert-success]="level==='success'"
+    role="alert"
+  >
+    <p>{{message}}</p>
+  </div>
+  <div>
+    <h2>EDIT {{type?.toUpperCase()}}</h2>
+  </div>
+  <div>
+    <label for="street">Street</label>
+    <label>Street</label>
+    <input [(ngModel)]="addressRequest.street"
+           placeholder="Enter Street" type="text" class="form-control" id="street">
+  </div>
+  <div>
+    <label>City</label>
+    <input [(ngModel)]="addressRequest.city" type="text" name="city" class="form-control" placeholder="Enter City">
+  </div>
+  <div>
+    <label for="postcode">Postcode</label>
+    <input [(ngModel)]="addressRequest.postCode" placeholder="Enter Postcode" id="postcode" class="form-control">
+  </div>
+  <div>
+    <button class="img-thumbnail p-2" type="submit" (click)="onSubmit()">Submit</button>
+  </div>
+</div>

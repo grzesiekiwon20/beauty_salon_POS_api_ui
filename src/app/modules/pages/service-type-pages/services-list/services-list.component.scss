@@ -1,0 +1,25 @@
+.b-1 {
+  background-color: rgba(246, 201, 202, 0.25);
+  font-size: larger;
+  border: rgba(246, 201, 202, 0.25);
+  font-family: monospace;
+  width: 230px;
+}
+
+.service-list {
+  background-color: rgba(246, 201, 202, 0.25);
+  width: inherit;
+  font-size: larger;
+  padding: 10px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-color: rgba(246, 201, 202, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 15px;
+  justify-content: center;
+}

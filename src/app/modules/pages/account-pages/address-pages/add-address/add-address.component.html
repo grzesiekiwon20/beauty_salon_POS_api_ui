@@ -1,0 +1,37 @@
+<div class="img-thumbnail d-flex flex-column">
+  <div class="">
+    <div
+      *ngIf="message"
+      class="alert "
+      [class.alert-danger]="level==='error'"
+      [class.alert-success]="level==='success'"
+      role="alert"
+    >
+      <p>{{message}}</p>
+    </div>
+    <div>
+      <label for="street">Street</label>
+      <input [(ngModel)]="addressRequest.street"
+             placeholder="Enter Street" type="text" class="form-control" id="street">
+    </div>
+    <div>
+      <label>City</label>
+      <input [(ngModel)]="addressRequest.city" type="text" name="city" class="form-control" placeholder="Enter City">
+    </div>
+    <div>
+      <label for="postcode">Postcode</label>
+      <input [(ngModel)]="addressRequest.postCode" placeholder="Enter Postcode" id="postcode" class="form-control">
+    </div>
+    <div>
+      <label>Address type</label>
+      <select [(ngModel)]="addressRequest.addressType" class="form-control" name="addressType">
+        <option value="home address">Home Address</option>
+        <option value="delivery address">Delivery Address</option>
+        <option value="billing address">Billing Address</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn" type="submit" (click)="onSubmit()">Submit</button>
+    </div>
+  </div>
+</div>

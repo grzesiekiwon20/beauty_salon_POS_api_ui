@@ -1,0 +1,17 @@
+<div class="img-thumbnail d-flex flex-column">
+  <div>
+    <p>{{confirmQuestion}}</p>
+  </div>
+  <div
+    *ngIf="message"
+    class="alert "
+    [class.alert-danger]="level==='error'"
+    [class.alert-success]="level==='success'"
+    role="alert"
+  >
+    <p>{{message}}</p>
+  </div>
+   <div>
+     <button class="img-thumbnail p-2" type="submit" (click)="onSubmit()">Submit</button>
+   </div>
+</div>
